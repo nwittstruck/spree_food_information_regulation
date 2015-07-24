@@ -1,0 +1,45 @@
+<!-- insert_after 'div[data-hook="product_properties"]' -->
+
+<% if defined? @product.food_information %>
+    <% food_information = @product.food_information %>
+
+    <h2><%= Spree.t(:food_information) %></h2>
+    <p><%= food_information.description %></p>
+
+    <h3><%= Spree.t(:net_contents) %></h3>
+    <p><%= food_information.net_contents %></p>
+
+    <h3><%= Spree.t(:origin) %></h3>
+    <p><%= food_information.origin %></p>
+    <p><%= food_information.producer_address %></p>
+
+    <% if food_information.alcohol_content %>
+        <h3><%= Spree.t(:alcohol_content) %></h3>
+        <p><%= food_information.alcohol_content %></p>
+    <% end %>
+
+    <h3><%= Spree.t(:allergens) %></h3>
+    <p><%= food_information.allergens %></p>
+
+
+
+    <h3><%= Spree.t(:nutrition_values) %></h3>
+    <%= food_information.nutrition_information %>
+
+
+<% end %>
+<!--
+      t.string :description
+      t.text :ingredients
+      t.string :net_contents
+      t.string :origin
+      t.string :producer_address
+      t.string :alcohol_content
+      t.text :nutrition_information
+      t.text :allergens
+
+      t.references :product
+
+      t.timestamps null: false-->
+
+

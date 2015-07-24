@@ -7,7 +7,7 @@ class CreateFoodInformations < ActiveRecord::Migration
       t.string :origin
       t.string :producer_address
       t.string :alcohol_content
-      t.text :nutrition_values
+      t.text :nutrition_information
       t.text :allergens
 
       t.references :product

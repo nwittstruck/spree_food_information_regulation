@@ -15,3 +15,8 @@ spec/dummy
 
 /tmp
 /vendor/bundle/
+
+    <h2>Nährwerte und Analysergebnisse pro <%= nutrition_information.quantity %></h2>
+        <% nutrition_information.nutrition_values.each do | nutrition_value | %>
+            <p><%= nutrition_value.name %> - <%= nutrition_value.value %></p>
+        <% end %>

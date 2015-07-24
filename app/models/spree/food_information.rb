@@ -18,7 +18,7 @@ module Spree
 
 
     serialize :ingredients
-    serialize :nutrition_values
+    serialize :nutrition_values, Hash
     belongs_to :product
 
 
