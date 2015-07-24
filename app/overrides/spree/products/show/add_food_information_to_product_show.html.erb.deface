@@ -6,6 +6,10 @@
     <h2><%= Spree.t(:food_information) %></h2>
     <p><%= food_information.description %></p>
 
+    <h3><%= Spree.t(:ingredients) %></h3>
+    <p><%= food_information.ingredients.join(', ') %></p>
+
+
     <h3><%= Spree.t(:net_contents) %></h3>
     <p><%= food_information.net_contents %></p>
 
@@ -22,24 +26,12 @@
     <p><%= food_information.allergens %></p>
 
 
-
     <h3><%= Spree.t(:nutrition_values) %></h3>
-    <%= food_information.nutrition_information %>
-
+    <% food_information.nutrition_information.each do |nutrition_information| %>
+    <h2><%= Spree.t(:nutrition_information_title, quantity: nutrition_information[:quantity]) %></h2>
+        <% nutrition_information[:nutrition_values].each do | nutrition_value | %>
+            <p><%= nutrition_value[:name] %> - <%= nutrition_value[:value] %></p>
+        <% end %>
+    <% end %>
 
 <% end %>
-<!--
-      t.string :description
-      t.text :ingredients
-      t.string :net_contents
-      t.string :origin
-      t.string :producer_address
-      t.string :alcohol_content
-      t.text :nutrition_information
-      t.text :allergens
-
-      t.references :product
-
-      t.timestamps null: false-->
-
-

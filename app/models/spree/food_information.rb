@@ -17,8 +17,8 @@ module Spree
     # l) eine Nährwertdeklaration.
 
 
-    serialize :ingredients
-    serialize :nutrition_values, Hash
+    serialize :ingredients, Array
+    serialize :nutrition_information, Array
     belongs_to :product
 
 
