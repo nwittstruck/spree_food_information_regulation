@@ -1,5 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe FoodInformation, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe Spree::FoodInformation, type: :model do
+  it "has a description" do
+    food_information = Spree::FoodInformation.new
+    food_information.description = "food description"
+    expect(food_information.description).not_to be_nil
+  end
 end
