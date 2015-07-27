@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_food_information_regulation'
-  s.version     = '3.0.1'
+  s.version     = '0.1.1'
   s.summary     = 'Food Information regulation for Spree'
   s.description = 'Adds Food Information to products to comply with the latest EU Food Information regulation.'
   s.required_ruby_version = '>= 2.0.0'
