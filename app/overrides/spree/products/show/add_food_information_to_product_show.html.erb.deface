@@ -1,6 +1,6 @@
 <!-- insert_after 'div[data-hook="product_properties"]' -->
 
-<% if defined? @product.food_information %>
+<% if @product.food_information %>
     <% food_information = @product.food_information %>
 
     <h2><%= Spree.t(:food_information) %></h2>
