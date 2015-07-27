@@ -35,5 +35,3 @@ Simply add this require statement to your spec_helper:
 ```ruby
 require 'spree_food_information_regulation/factories'
 ```
-
-Copyright (c) 2015 [name of extension creator], released under the New BSD License
