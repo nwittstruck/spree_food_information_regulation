@@ -40,6 +40,7 @@ require 'spree/api/testing_support/setup'
 # Requires factories defined in lib/spree_food_information_regulation/factories.rb
 require 'spree_food_information_regulation/factories'
 
+
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
 
