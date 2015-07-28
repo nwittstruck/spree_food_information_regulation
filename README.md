@@ -1,7 +1,7 @@
 SpreeFoodInformationRegulation
 ==============================
 
-Introduction goes here.
+Spree extension which is mostly a playground and also adds required food information to a product. 
 
 Installation
 ------------
@@ -27,11 +27,4 @@ First bundle your dependencies, then run `rake`. `rake` will default to building
 ```shell
 bundle
 bundle exec rake
-```
-
-When testing your applications integration with this extension you may use it's factories.
-Simply add this require statement to your spec_helper:
-
-```ruby
-require 'spree_food_information_regulation/factories'
 ```
