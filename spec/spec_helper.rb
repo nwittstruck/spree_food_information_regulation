@@ -16,6 +16,7 @@ ENV['RAILS_ENV'] = 'test'
 require File.expand_path('../dummy/config/environment.rb',  __FILE__)
 
 require 'rspec/rails'
+require 'rspec/active_model/mocks'
 require 'database_cleaner'
 require 'ffaker'
 
@@ -29,6 +30,12 @@ require 'spree/testing_support/capybara_ext'
 require 'spree/testing_support/controller_requests'
 require 'spree/testing_support/factories'
 require 'spree/testing_support/url_helpers'
+require 'spree/testing_support/preferences'
+
+# api helpers:
+require 'spree/api/testing_support/caching'
+require 'spree/api/testing_support/helpers'
+require 'spree/api/testing_support/setup'
 
 # Requires factories defined in lib/spree_food_information_regulation/factories.rb
 require 'spree_food_information_regulation/factories'
@@ -84,4 +91,14 @@ RSpec.configure do |config|
 
   config.fail_fast = ENV['FAIL_FAST'] || false
   config.order = "random"
+
+
+  config.include FactoryGirl::Syntax::Methods
+  config.include Spree::Api::TestingSupport::Helpers, :type => :controller
+  config.extend Spree::Api::TestingSupport::Setup, :type => :controller
+  config.include Spree::TestingSupport::Preferences, :type => :controller
+
+  config.before do
+    Spree::Api::Config[:requires_authentication] = true
+  end
 end
