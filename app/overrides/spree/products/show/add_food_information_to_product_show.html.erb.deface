@@ -9,7 +9,6 @@
     <h3><%= Spree.t(:ingredients) %></h3>
     <p><%= food_information.ingredients.join(', ') %></p>
 
-
     <h3><%= Spree.t(:net_contents) %></h3>
     <p><%= food_information.net_contents %></p>
 
@@ -28,17 +27,16 @@
 
     <h3><%= Spree.t(:nutrition_values) %></h3>
     <% food_information.nutrition_information.each do |nutrition_information| %>
-    <h4><%= Spree.t(:nutrition_information_title, quantity: nutrition_information[:quantity]) %></h4>
+        <h4><%= Spree.t(:nutrition_information_title, quantity: nutrition_information[:quantity]) %></h4>
         <table id="nutrition-information" class="table table-striped" data-hook>
             <tbody>
-
-            <% nutrition_information[:nutrition_values].each do | nutrition_value | %>
-                <tr><td><%= nutrition_value[:name] %></td><td><%= nutrition_value[:value] %></td></tr>
+            <% nutrition_information[:nutrition_values].each do |nutrition_value| %>
+                <tr>
+                    <td><%= nutrition_value[:name] %></td>
+                    <td><%= nutrition_value[:value] %></td>
+                </tr>
             <% end %>
             </tbody>
         </table>
-
-
     <% end %>
-
 <% end %>
